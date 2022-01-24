@@ -4,6 +4,8 @@ import useSWR from "swr";
 
 import { OgpData } from "@/types";
 
+import { Loading } from "./Loading";
+
 // Presentational Component
 const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
   const { title, description, faviconUrl, pageUrl, ogImgUrl } = ogp;
@@ -40,7 +42,7 @@ export const LinkCard: VFC<{ url: string }> = ({ url }) => {
   // for debug
   console.log(error);
 
-  if (!data) return <div></div>;
+  if (!data) return <Loading />;
 
   return <LinkCardView ogp={data} />;
 };
