@@ -1,7 +1,8 @@
 import Head from "next/head";
 
-import { LinkCard } from "@/components/LinkCard";
-import { Spacer } from "@/components/Spacer";
+import { LinkCard } from "@/components/model/TEvent/LinkCard";
+import { Spacer } from "@/components/model/ui/Spacer";
+
 import { mockOgpDataList } from "@/mocks/OgpData";
 
 import type { NextPage } from "next";
