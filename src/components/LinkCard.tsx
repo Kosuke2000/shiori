@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { NextPage } from "next";
 import { VFC } from "react";
 import useSWR from "swr";
 

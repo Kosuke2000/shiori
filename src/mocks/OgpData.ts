@@ -1,10 +1,4 @@
-export type OgpData = {
-  title: string;
-  description: string;
-  faviconUrl: string;
-  pageUrl: string;
-  ogImgUrl: string;
-};
+import { OgpData } from "@/types";
 
 export const mockOgpData: OgpData = {
   title: "State as a Snapshot",
@@ -13,6 +7,7 @@ export const mockOgpData: OgpData = {
   pageUrl: "https://beta.reactjs.org/learn/state-as-a-snapshot",
   ogImgUrl: "https://beta.reactjs.org/logo-og.png",
 };
+
 export const mockOgpData1: OgpData = {
   title:
     "State variables might look like regular JavaScript variables that you can read and write to. However, state behaves more like a snapshot. Setting it does not change the state variable you already have, but instead triggers a re-render.",
@@ -21,6 +16,7 @@ export const mockOgpData1: OgpData = {
   pageUrl: "https://beta.reactjs.org/learn/state-as-a-snapshot",
   ogImgUrl: "https://beta.reactjs.org/logo-og.png",
 };
+
 export const mockOgpData2: OgpData = {
   title: "State as a Snapshot",
   description:
@@ -29,4 +25,5 @@ export const mockOgpData2: OgpData = {
   pageUrl: "https://beta.reactjs.org/learn/state-as-a-snapshot",
   ogImgUrl: "",
 };
+
 export const mockOgpDataList = [mockOgpData, mockOgpData1, mockOgpData2];

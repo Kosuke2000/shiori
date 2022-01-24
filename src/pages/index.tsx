@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { LinkCard } from "@/components/LinkCard";
 import { Spacer } from "@/components/Spacer";
-import { mockOgpDataList } from "@/types";
+import { mockOgpDataList } from "@/mocks/OgpData";
 
 import type { NextPage } from "next";
 
