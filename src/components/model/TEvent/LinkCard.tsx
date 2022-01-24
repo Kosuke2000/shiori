@@ -40,7 +40,7 @@ export const LinkCard: VFC<{ url: string }> = ({ url }) => {
   const { data, error } = useSWR<OgpData>(`/api/getOgp?url=${url}`, fetcher);
 
   // for debug
-  console.log(error);
+  if (!error) console.log(error);
 
   if (!data) return <Loading />;
 
