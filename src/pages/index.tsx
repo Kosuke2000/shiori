@@ -11,7 +11,7 @@ const Home: NextPage = () => {
     <main className="max-w-screen-md mx-auto">
       {mockOgpDataList.map((ogp, i) => (
         <>
-          <LinkCard ogp={ogp} key={i.toString()} />
+          <LinkCard url="https://beta.reactjs.org/" key={i.toString()} />
           <Spacer size={10} />
         </>
       ))}

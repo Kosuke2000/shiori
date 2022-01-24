@@ -1,12 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
+import { NextPage } from "next";
 import { VFC } from "react";
+import useSWR from "swr";
 
 import { OgpData } from "@/types";
 
-interface LinkCardProps {
-  ogp: OgpData;
-}
-
-export const LinkCard: VFC<LinkCardProps> = ({ ogp }) => {
+// Presentational Component
+const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
   const { title, description, faviconUrl, pageUrl, ogImgUrl } = ogp;
   const w = ogImgUrl ? "w-3/5" : "w-full";
   const ml = faviconUrl ? "ml-2" : "";
@@ -33,3 +33,17 @@ export const LinkCard: VFC<LinkCardProps> = ({ ogp }) => {
     </a>
   );
 };
+
+// Container Component
+export const LinkCard: VFC<{ url: string }> = ({ url }) => {
+  const { data, error } = useSWR<OgpData>(`/api/getOgp?url=${url}`, fetcher);
+
+  // for debug
+  console.log(error);
+
+  if (!data) return <div></div>;
+
+  return <LinkCardView ogp={data} />;
+};
+
+const fetcher = (path: string) => fetch(path).then((res) => res.json());
