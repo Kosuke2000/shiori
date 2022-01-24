@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { LinkCard } from "@/components/model/TEvent/LinkCard";
+import { LinkCard, LinkCardView } from "@/components/model/TEvent/LinkCard";
 
 import { Spacer } from "@/components/ui/Spacer";
 
@@ -14,6 +14,12 @@ const Home: NextPage = () => {
       {mockOgpDataList.map((ogp, i) => (
         <>
           <LinkCard url="https://beta.reactjs.org/" key={i.toString()} />
+          <Spacer size={10} />
+        </>
+      ))}
+      {mockOgpDataList.map((ogp, i) => (
+        <>
+          <LinkCardView ogp={ogp} key={i.toString()} />
           <Spacer size={10} />
         </>
       ))}
