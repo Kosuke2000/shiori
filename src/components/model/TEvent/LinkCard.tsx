@@ -14,12 +14,12 @@ export const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
 
   return (
     <a href={pageUrl} target="_blank" rel="noreferrer">
-      <article className="flex justify-between border border-gray-400 border-solid rounded h-40">
+      <article className="flex justify-between h-40 rounded border border-gray-400 border-solid">
         <div
           className={`flex flex-col justify-between p-5  hover:bg-gray-100 ${w}`}
         >
           <h3 className="text-2xl truncate">{title}</h3>
-          <p className="text-base text-gray-500 overflow-hidden h-12">
+          <p className="overflow-hidden h-12 text-base text-gray-500">
             {description}
           </p>
           <div className="flex items-center">
@@ -29,7 +29,7 @@ export const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
         </div>
         {ogImgUrl && (
           <div className="w-2/5 h-full rounded">
-            <img src={ogImgUrl} className="w-full h-full object-cover" alt="" />
+            <img src={ogImgUrl} className="object-cover w-full h-full" alt="" />
           </div>
         )}
       </article>
