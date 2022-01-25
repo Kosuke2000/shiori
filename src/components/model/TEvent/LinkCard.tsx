@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { VFC } from "react";
-import useSWR from "swr";
+
+import { useOgp } from "@/hooks/useOgp";
 
 import { OgpData } from "@/types";
 
@@ -39,7 +40,7 @@ export const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
 
 // Container Component
 export const LinkCard: VFC<{ url: string }> = ({ url }) => {
-  const { data, error } = useSWR<OgpData>(`/api/getOgp?url=${url}`, fetcher);
+  const { data, error } = useOgp(url);
 
   // for debug
   if (!error) console.log(error);
@@ -48,5 +49,3 @@ export const LinkCard: VFC<{ url: string }> = ({ url }) => {
 
   return <LinkCardView ogp={data} />;
 };
-
-const fetcher = (path: string) => fetch(path).then((res) => res.json());
