@@ -46,8 +46,7 @@ export const LinkCard: VFC<{ url: string }> = ({ url }) => {
 
   if (!data) return <Loading />;
 
-  return <Loading />;
-  // return <LinkCardView ogp={data} />;
+  return <LinkCardView ogp={data} />;
 };
 
 const fetcher = (path: string) => fetch(path).then((res) => res.json());

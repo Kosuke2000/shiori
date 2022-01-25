@@ -10,7 +10,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <main className="max-w-screen-md mx-auto">
+    <main className="mx-auto max-w-screen-md">
       {mockOgpDataList.map((ogp, i) => (
         <>
           <LinkCard url="https://beta.reactjs.org/" key={i.toString()} />
