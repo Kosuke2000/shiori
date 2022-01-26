@@ -25,7 +25,7 @@ export const LinkCardView: VFC<{ ogp: OgpData }> = ({ ogp }) => {
           </p>
           <div className="flex items-center">
             {faviconUrl && <img src={faviconUrl} className="h-6" alt="" />}
-            <p className={`text-base ${ml}`}>{pageUrl}</p>
+            <p className={`text-base truncate ${ml}`}>{pageUrl}</p>
           </div>
         </div>
         {ogImgUrl && (
