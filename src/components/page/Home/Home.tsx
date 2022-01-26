@@ -1,13 +1,13 @@
-import { TEventList } from "@/components/model/TEvent/TEventList";
+import { Day } from "@/components/model/Day";
 
-import { mockTEventList } from "@/mocks/TEvent";
+import { mockDay0 } from "@/mocks/Day";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
     <main className="mx-auto max-w-screen-md">
-      <TEventList events={mockTEventList} />
+      <Day day={mockDay0} />
     </main>
   );
 };
