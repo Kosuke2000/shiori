@@ -15,8 +15,9 @@ export const TEvent: VFC<TEventProps> = ({ event }) => {
       <div className="flex items-center text-xl font-bold">
         <time>{time}</time>
         <Spacer size={12} />
-        <span>{title}</span>
+        <span className="truncate">{title}</span>
       </div>
+      <Spacer size={12} />
       <LinkCard url={src} />
     </div>
   );

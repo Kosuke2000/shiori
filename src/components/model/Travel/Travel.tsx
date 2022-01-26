@@ -28,7 +28,7 @@ export const Travel: VFC<TravelProps> = ({ travel }) => {
   }, [isFirstDay]);
 
   return (
-    <div className="h-screen bg-yellow-400">
+    <div className="relative px-2 h-screen bg-yellow-400">
       <main className="overflow-y-scroll z-0 p-12 mx-auto max-w-screen-md h-screen bg-white border-x-8 border-black ">
         <div className="text-center">
           <h1 className="text-6xl">{title}</h1>
@@ -36,7 +36,7 @@ export const Travel: VFC<TravelProps> = ({ travel }) => {
         <Day day={day} />
         <Spacer size={40} />
       </main>
-      <footer className="flex absolute bottom-0 z-10 justify-center p-4 w-screen bg-white">
+      <footer className="flex absolute inset-x-0 bottom-0 z-10 justify-center p-4 w-screen bg-white drop-shadow-2xl">
         <div className="flex justify-evenly w-full max-w-screen-md text-2xl ">
           <div onClick={toPrevDay} className={`${leftButtonProp}`}>
             {"＜"}
