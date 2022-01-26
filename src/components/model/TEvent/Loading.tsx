@@ -2,7 +2,6 @@ import { VFC } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-// TODO: カードのローディングスケルトンを実装
 export const Loading: VFC = () => {
   return (
     <div>

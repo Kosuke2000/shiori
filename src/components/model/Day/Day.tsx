@@ -4,7 +4,6 @@ import { DayProps } from "@/types";
 
 import { TEventList } from "../TEvent/TEventList";
 
-// TODO: 見た目の実装
 export const Day: VFC<DayProps> = ({ day }) => {
   const { date, events } = day;
   const dayOfWeek = date.getDay(); // 曜日(数値)
