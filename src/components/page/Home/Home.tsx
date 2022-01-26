@@ -1,15 +1,11 @@
-import { Day } from "@/components/model/Day";
+import { Travel } from "@/components/model/Travel";
 
-import { mockDay0 } from "@/mocks/Day";
+import { mockTravel } from "@/mocks/Travel";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return (
-    <main className="mx-auto max-w-screen-md">
-      <Day day={mockDay0} />
-    </main>
-  );
+  return <Travel travel={mockTravel} />;
 };
 
 export default Home;
