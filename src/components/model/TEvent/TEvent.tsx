@@ -11,7 +11,7 @@ export const TEvent: VFC<TEventProps> = ({ event }) => {
 
   return (
     <div className="flex flex-col">
-      <time className="font-bold">{time}</time>
+      <time className="text-xl font-bold">{time}</time>
       <LinkCard url={src} />
     </div>
   );
