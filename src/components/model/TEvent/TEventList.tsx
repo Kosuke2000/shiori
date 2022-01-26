@@ -11,7 +11,7 @@ export const TEventList: VFC<TEventListProps> = ({ events }) => {
     <div>
       {events.map((event) => (
         <>
-          <TEvent event={event} key={event.startAt.toISOString()} />
+          <TEvent event={event} key={event.startAt.toString()} />
           <Spacer size={40} />
         </>
       ))}

@@ -13,7 +13,7 @@ const mockTEvent0_1: TEvent = {
   title: "焼き鳥 あたらよ",
 };
 const mockTEvent0_2: TEvent = {
-  startAt: new Date("2022-01-26 20:20:00"),
+  startAt: new Date("2022-01-26 20:20:55"),
   src: "https://rtrp.jp/spots/36578ee3-cf37-4830-9b28-fad5962ec672/",
   title: "ナイトクルーズ",
 };
@@ -35,7 +35,7 @@ const mockTEvent1_1: TEvent = {
   title: "温泉",
 };
 const mockTEvent1_2: TEvent = {
-  startAt: new Date("2022-01-26 19:15:00"),
+  startAt: new Date("2022-01-26 19:15:55"),
   src: "https://www.hafh.com/properties/989",
   title: "RE SORT",
 };
