@@ -33,7 +33,10 @@ export const Travel: VFC<TravelProps> = ({ travel }) => {
 
   return (
     <>
-      <div className="overflow-auto relative px-2 h-screen bg-yellow-400">
+      <div
+        style={{ touchAction: `none` }}
+        className="overflow-auto relative px-2 h-screen bg-yellow-400"
+      >
         <main className="overflow-y-scroll z-0 p-12 mx-auto max-w-screen-md h-screen bg-white border-x-8 border-black ">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl">{parse(title)}</h1>
