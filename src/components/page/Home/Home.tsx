@@ -1,26 +1,20 @@
 import Head from "next/head";
 
-import { LinkCard, LinkCardView } from "@/components/model/TEvent/LinkCard";
+import { TEvent } from "@/components/model/TEvent";
 
 import { Spacer } from "@/components/ui/Spacer";
 
-import { mockOgpDataList } from "@/mocks/OgpData";
+import { mockTEventList } from "@/mocks/TEvent";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
     <main className="mx-auto max-w-screen-md">
-      {mockOgpDataList.map((ogp, i) => (
+      {mockTEventList.map((event) => (
         <>
-          <LinkCard url="https://beta.reactjs.org/" key={i.toString()} />
-          <Spacer size={10} />
-        </>
-      ))}
-      {mockOgpDataList.map((ogp, i) => (
-        <>
-          <LinkCardView ogp={ogp} key={i.toString()} />
-          <Spacer size={10} />
+          <TEvent event={event} key={event.startAt.toISOString()} />
+          <Spacer size={12} />
         </>
       ))}
     </main>
