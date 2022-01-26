@@ -57,7 +57,7 @@ async function getOgp(req: NextApiRequest, res: NextApiResponse<OgpData>) {
           description: ogp["description"] as string,
           faviconUrl: siteUrl + faviconPath,
           ogImgUrl: ogp["image"] as string,
-          pageUrl: ogp["url"] as string,
+          pageUrl: url as string,
         };
 
         return ogpData;
@@ -79,7 +79,7 @@ async function getOgp(req: NextApiRequest, res: NextApiResponse<OgpData>) {
       description: "",
       faviconUrl: "",
       ogImgUrl: "",
-      pageUrl: "",
+      pageUrl: url as string,
     });
     console.log(err);
   }
