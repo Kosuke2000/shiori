@@ -10,22 +10,26 @@ export const Travel: VFC<TravelProps> = ({ travel }) => {
   const { title, days } = travel;
   const [n, setN] = useState(0);
   const day = days[n];
+  const isFirstDay = n === 0;
+  const isLastDay = n === days.length - 1;
+  const leftButtonProp = isFirstDay ? "text-gray-200" : "black cursor-pointer";
+  const rightButtonProp = isLastDay ? "text-gray-200" : "black cursor-pointer";
 
   const toNextDay = useCallback(() => {
-    if (n !== days.length - 1) {
+    if (!isLastDay) {
       setN((count) => count + 1);
     }
-  }, [n, days]);
+  }, [isLastDay]);
 
   const toPrevDay = useCallback(() => {
-    if (n !== 0) {
+    if (!isFirstDay) {
       setN((count) => count - 1);
     }
-  }, [n]);
+  }, [isFirstDay]);
 
   return (
     <div className="h-screen bg-yellow-400">
-      <main className="overflow-y-scroll z-0 p-12 mx-auto max-w-screen-md h-screen bg-white border-x-8 border-black">
+      <main className="overflow-y-scroll z-0 p-12 mx-auto max-w-screen-md h-screen bg-white border-x-8 border-black ">
         <div className="text-center">
           <h1 className="text-6xl">{title}</h1>
         </div>
@@ -33,12 +37,16 @@ export const Travel: VFC<TravelProps> = ({ travel }) => {
         <Spacer size={40} />
       </main>
       <footer className="flex absolute bottom-0 z-10 justify-center p-4 w-screen bg-white">
-        <div className="flex justify-evenly w-full max-w-screen-md text-2xl">
-          <div onClick={toPrevDay}>{"＜"}</div>
+        <div className="flex justify-evenly w-full max-w-screen-md text-2xl ">
+          <div onClick={toPrevDay} className={`${leftButtonProp}`}>
+            {"＜"}
+          </div>
           <div>
             <h3>Day{n + 1}</h3>
           </div>
-          <div onClick={toNextDay}>{"＞"}</div>
+          <div onClick={toNextDay} className={`${rightButtonProp}`}>
+            {"＞"}
+          </div>
         </div>
       </footer>
     </div>
