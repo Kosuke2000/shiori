@@ -1,11 +1,11 @@
 import { Travel } from "@/components/model/Travel";
 
-import { mockTravel } from "@/mocks/Travel";
+import { TRAVEL_DATA } from "./data";
 
 import type { NextPage } from "next";
 
 const Home: NextPage = () => {
-  return <Travel travel={mockTravel} />;
+  return <Travel travel={TRAVEL_DATA} />;
 };
 
 export default Home;
