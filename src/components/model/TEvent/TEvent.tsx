@@ -8,7 +8,13 @@ import { LinkCard } from "./LinkCard";
 
 export const TEvent: VFC<TEventProps> = ({ event }) => {
   const { startAt, src, title } = event;
-  const time = `${startAt.getHours()}:${startAt.getMinutes()}`;
+
+  const hour = startAt.getHours();
+  const minutes =
+    startAt.getMinutes() > 9
+      ? "" + startAt.getMinutes()
+      : "0" + startAt.getMinutes();
+  const time = `${hour}:${minutes}`;
 
   return (
     <div className="flex flex-col">
